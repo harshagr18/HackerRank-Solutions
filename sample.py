@@ -9,8 +9,8 @@ for _ in range(u):
 
 # This program adds two numbers
 
-num1 = 1.5
-num2 = 6.3
+num1 = 1.6
+num2 = 6.2
 
 # Add two numbers
 sum = num1 + num2
