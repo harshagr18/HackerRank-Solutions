@@ -1,24 +1,24 @@
-#Problem Link = https://www.hackerrank.com/challenges/python-lists/problem
+# Python program for implementation of Selection
+# Sort
+import sys
+A = [64, 25, 12, 22, 11]
 
-u = int(input())
-final = []
-for o in range(u):
-    a = input()
-    if "insert" in a:
-        a = a.replace("insert ","")
-        i,e = list(map(int, a.split(" ")))
-        final.insert(i,e)
-    if "print" in a:
-        print(final)
-    if "remove" in a:
-        a = a.replace("remove ","")
-        final.remove(int(a))
-    if "append" in a:
-        a = a.replace("append ","")
-        final.append(int(a))
-    if "sort" in a:
-        final.sort()
-    if "pop" in a:
-        final.pop()
-    if "reverse" in a:
-        final.reverse()
+# Traverse through all array elements
+for i in range(len(A)):
+	
+	# Find the minimum element in remaining
+	# unsorted array
+	min_idx = i
+	for j in range(i+1, len(A)):
+		if A[min_idx] > A[j]:
+			min_idx = j
+			
+	# Swap the found minimum element with
+	# the first element	
+	A[i], A[min_idx] = A[min_idx], A[i]
+
+# Driver code to test above
+print ("Sorted array")
+for i in range(len(A)):
+	print("%d" %A[i]),
+
